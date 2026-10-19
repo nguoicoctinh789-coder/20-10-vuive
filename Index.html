@@ -1,0 +1,79 @@
+export default {
+  async fetch(request, env, ctx) {
+    const html = `
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🌷 Vườn Hoa Tulip</title>
+  <style>
+    * {margin: 0; padding: 0; box-sizing: border-box;}
+    body {
+      background: linear-gradient(135deg, #ffecd2, #fcb69f);
+      min-height: 100vh;
+      padding: 40px 25px;
+      font-family: 'Segoe UI', sans-serif;
+    }
+    .box {
+      background: rgba(255, 255, 255, 0.75);
+      border-radius: 24px;
+      padding: 35px 25px;
+      max-width: 480px;
+      margin: 0 auto;
+      box-shadow: 0 6px 30px rgba(176, 87, 108, 0.15);
+    }
+    p {
+      color: #5a3e36;
+      font-size: 17px;
+      line-height: 2;
+      margin-bottom: 12px;
+    }
+    .end {
+      text-align: center;
+      margin-top: 30px;
+      font-size: 19px;
+      color: #b0576c;
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+  <audio loop id="nhacNen">
+    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+  
+
+  <div class="box">
+    <p>đợi chút xíu đii</p>
+    <p>này cậu gì ơi</p>
+    <p style="font-size: 20px; font-weight: bold;">tớ là Thương 💛</p>
+    <p>Hôm nay tớ nhận lệnh từ hệ thống để...</p>
+    <p>ui cậu đẹp quá</p>
+    <p>à thì cũng sắp 20/10 rồi</p>
+    <p>nên là tớ muốn</p>
+    <p>chúc cậu thật nhiều sức khỏe ✨</p>
+    <p>chúc cậu thật xinh đẹp 🌸</p>
+    <p>và chúc cậu luôn giữ nụ cười trên môi 😊</p>
+    <br>
+    <p>tớ tặng cậu ngọn cỏ 4 lá này 🍀</p>
+    <p>nè cầm lấy đi</p>
+    <p>chúc cậu gặp được thật nhiều điều may mắn ✨🍀</p>
+    <p class="end">🌷 Chào mừng đến với Vườn Hoa Tulip 🌷</p>
+  </div>
+
+  <script>
+    let nhac = document.getElementById('nhacNen');
+    document.addEventListener('click', function batNhac() {
+      nhac.volume = 0.25;
+      nhac.play();
+      document.removeEventListener('click', batNhac);
+    });
+  <\/script>
+</body>
+</html>
+    `;
+    return new Response(html, {
+      headers: { "Content-Type": "text/html; charset=utf-8" },
+    });
+  },
+};
